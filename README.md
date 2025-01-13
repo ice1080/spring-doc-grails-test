@@ -37,7 +37,7 @@ After which the docs can be found at build/openapi.json
 
 ## Creation of Project
 
-This project was created using the following command:
+This project was created using the following command (assumes sdkman is installed):
 
 ```shell
 sdk use grails 6.2.3
