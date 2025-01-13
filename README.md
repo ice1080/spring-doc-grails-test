@@ -1,23 +1,24 @@
-## Grails 6.2.3 Documentation
+# SpringDoc and Grails 6
 
-- [User Guide](https://docs.grails.org/6.2.3/guide/index.html)
-- [API Reference](https://docs.grails.org/6.2.3/api/index.html)
-- [Grails Guides](https://guides.grails.org/index.html)
----
+Grails 6 example project with SpringDoc OpenAPI UI.
 
-## Feature scaffolding documentation
+## Running the app locally
 
-- [Grails Scaffolding Plugin documentation](https://grails.github.io/scaffolding/latest/groovydoc/)
+```shell
+./gradlew bootRun
+```
 
-- [https://grails-fields-plugin.github.io/grails-fields/latest/guide/index.html](https://grails-fields-plugin.github.io/grails-fields/latest/guide/index.html)
+## Viewing the API
 
-## Feature geb documentation
+Open the Swagger UI
+at [http://localhost:8080/newContext/swagger-ui.html](http://localhost:8080/newContext/swagger-ui.html)
 
-- [Grails Geb Functional Testing for Grails documentation](https://github.com/grails3-plugins/geb#readme)
+## Notes
 
-- [https://www.gebish.org/manual/current/](https://www.gebish.org/manual/current/)
-
-## Feature asset-pipeline-grails documentation
-
-- [Grails Asset Pipeline Core documentation](https://www.asset-pipeline.com/manual/)
+* The `newContext` path is added in application.yml to demonstrate that this works for modified context paths.
+* Additional dependencies are added to the build.gradle file to support SpringDoc.
+* This project also demonstrates a RestController that is not tied to a specific domain class, as that was needed in our
+  use case.
+* Modifications to springdoc can also be made in application.yml using the standard config keys from springdoc ([reference](https://springdoc.org/v1/#springdoc-openapi-core-properties))
+* This repo has auth disabled, but it should be easy to add via configuration
 
