@@ -82,6 +82,7 @@ dependencies {
 
     // SpringDoc dependencies
     implementation 'org.springdoc:springdoc-openapi-ui:1.8.0'
+    implementation 'org.springdoc:springdoc-openapi-groovy:1.8.0'
 }
 
 application {
