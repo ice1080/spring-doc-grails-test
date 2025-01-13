@@ -15,8 +15,12 @@ class TestController {
 
     @Operation(summary = 'List all records', description = "Returns a list of all records")
     @GetMapping
-    def index() {
-        render 'all records'
+    List<TestObject> index() {
+        [
+                new TestObject(id: '123', name: "myName1", other: 'otherStuff'),
+                new TestObject(id: '456', name: "myName2"),
+                new TestObject(id: '789', name: "myName3", other: 'things')
+        ]
     }
 
     @Operation(
@@ -36,10 +40,14 @@ class TestController {
         new TestObject(id: id, name: "myName", other: 'otherStuff')
     }
 
-    @PostMapping
     @Operation(summary = 'Create a new record', description = "Creates a new record and returns it in the response")
-    def save() {
-        render "record saved"
+    @ApiResponses(value = [
+            @ApiResponse(responseCode = '200', description = 'Record saved successfully'),
+    ])
+    @PostMapping
+    // has to be protected for grails to skip it as an endpoint, in order for spring to register it without conflict
+    protected TestObject save(@RequestBody TestObject testObject) {
+        testObject
     }
 
 }
