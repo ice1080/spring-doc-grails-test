@@ -77,6 +77,9 @@ dependencies {
     testRuntimeOnly "org.seleniumhq.selenium:selenium-chrome-driver:4.19.1"
     testRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:4.19.1"
     testRuntimeOnly "org.seleniumhq.selenium:selenium-safari-driver:4.19.1"
+
+    // SpringDoc dependencies
+    implementation 'org.springdoc:springdoc-openapi-ui:1.8.0'
 }
 
 application {
