@@ -17,6 +17,8 @@ plugins {
     id "com.bertramlabs.asset-pipeline" version "4.5.1"
     id "application"
     id "eclipse"
+
+    id("org.springdoc.openapi-gradle-plugin") version "1.9.0"
 }
 
 // Not Published to Gradle Plugin Portal
@@ -91,6 +93,10 @@ application {
 
 java {
     sourceCompatibility = JavaVersion.toVersion("11")
+}
+
+openApi {
+    apiDocsUrl.set("http://localhost:8080/newContext/v3/api-docs")
 }
 
 tasks.withType(Test) {
