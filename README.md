@@ -19,6 +19,17 @@ at [http://localhost:8080/newContext/swagger-ui.html](http://localhost:8080/newC
 * Additional dependencies are added to the build.gradle file to support SpringDoc.
 * This project also demonstrates a RestController that is not tied to a specific domain class, as that was needed in our
   use case.
-* Modifications to springdoc can also be made in application.yml using the standard config keys from springdoc ([reference](https://springdoc.org/v1/#springdoc-openapi-core-properties))
+* Modifications to springdoc can also be made in application.yml using the standard config keys from
+  springdoc ([reference](https://springdoc.org/v1/#springdoc-openapi-core-properties))
 * This repo has auth disabled, but it should be easy to add via configuration
+* Grails tries to register every public controller method as an endpoint, so you have to make some endpoints protected
+  if they have a RequestMapping and a PathVariable or RequestBody in them 
 
+## Creation of Project
+
+This project was created using the following command:
+
+```shell
+sdk use grails 6.2.3
+grails create-app spring-doc-grails-test
+```

@@ -2,6 +2,7 @@ package spring.doc.grails
 
 import io.swagger.v3.oas.annotations.media.Schema
 
+@Schema(description = 'Example object for showing Schema descriptions', type = 'object')
 class TestObject implements Serializable {
     @Schema(description = 'The id of the object', example = '123', requiredMode = Schema.RequiredMode.REQUIRED)
     String id
